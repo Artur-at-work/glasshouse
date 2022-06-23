@@ -17,10 +17,12 @@
 
       <div class="jumbotron">
         <center><h3>GlassHouse</h3>
-          <a href="{% url 'scrape' %}" class="btn btn-success">Get Property</a>
+          <a href="{% url 'scrape' %}" class="btn btn-success">Get Listings</a>
           <BR><BR>
           <a href="{% url 'clean' %}" class="btn btn-success">Clean All</a>
+          <a href="{% url 'price_history' %}" class="btn btn-success">Price History</a>
           <h6>Total Listings: {{ object_list|length }}</h6>
+
         </center>
       </div>
       

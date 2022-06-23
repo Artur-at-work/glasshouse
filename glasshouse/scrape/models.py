@@ -26,7 +26,7 @@ class PriceHistory(models.Model):
     rec_date = models.DateField()
 
     def __str__(self):
-        return self.rec_date
+        return self.house_id
 
 class SoldHouses(models.Model):
     house_id = models.CharField(max_length=100)
