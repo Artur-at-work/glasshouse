@@ -8,14 +8,7 @@ from django.http import HttpResponse
 from django.utils import timezone
 
 # visualization
-from plotly.offline import plot
-import plotly.graph_objs as go
-from plotly.graph_objects import Scatter
-
-from django.db import connection
-import pandas as pd
-
-import plotly.express as px
+from .plots import *
 
 
 # Returns True if property count has changed
@@ -125,18 +118,18 @@ def clean(request):
     return redirect("../")
 
 def price_history(request):
-    # direct call to Django SQLite
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM scrape_PriceHistory")
-        row = cursor.fetchall()
+    # # direct call to Django SQLite
+    # with connection.cursor() as cursor:
+    #     cursor.execute("SELECT * FROM scrape_PriceHistory")
+    #     row = cursor.fetchall()
     
-    result_table = pd.DataFrame(row) # TODO: preserve column names
-    print(list(result_table.columns))
+    # result_table = pd.DataFrame(row) # TODO: preserve column names
+    # print(list(result_table.columns))
 
-    fig = px.line(result_table, x=2, y=1, color=3)
-    fig.update_layout(title_text = 'Price History by House',
-                      xaxis_title = 'Dates',
-                      yaxis_title = 'Price')
-    plotly_plot_obj = plot({'data': fig}, output_type='div')
+    # fig = px.line(result_table, x=2, y=1, color=3)
+    # fig.update_layout(title_text = 'Price History by House',
+    #                   xaxis_title = 'Dates',
+    #                   yaxis_title = 'Price')
+    plotly_plot_obj = plot_price_history()
 
     return render(request, "scrape/price_history.html", context={'plot_div': plotly_plot_obj})
