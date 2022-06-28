@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+      <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  </head>
+  <body>
+      <script type="text/javascript">
+      $(document).ready( function () {
+        $.noConflict();
+        $('#results').DataTable();
+      } );
+      </script>
+
+      <div class="jumbotron">
+        <center><h3>GlassHouse</h3>
+          <a href="{% url 'scrape' %}" class="btn btn-success">Get Listings</a>
+          <BR><BR>
+          <a href="{% url 'clean' %}" class="btn btn-success">Clean All</a>
+          <a href="{% url 'price_history' %}" target="_blank" class="btn btn-success">Price History</a>
+          <h6>Total Listings: {{ object_list|length }}</h6>
+
+        </center>
+      </div>
+      
+    <div style="padding: 10px; margin: 20px;">
+      <table id="results" class="display">
+        <thead>
+            <tr>
+                <th>Street</th>
+                <th>Price $ NTD</th>
+                <th>Price Per Square Meter</th>
+                <th>Size in Square Meters</th>
+                <th>Bedrooms</th>
+                <th>Bathrooms</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td><h6 class="card-title">{{object.address}} ID: {{object.house_id}}</h6></td>
+                <td><a href="{{object.url}}" target="_blank"><h5 class="card-title">{{object.price}}</h5></a></td>
+                <td><h6 class="card-title">${{object.price_per_m2}}</h6></td>
+                <td><h6 class="card-title">{{object.size_m2}}</h6></td>
+                <td><h6 class="card-title">{{object.bedrooms}}</h6></td>
+                <td><h6 class="card-title">{{object.bathrooms}}</h6></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

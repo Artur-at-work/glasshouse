@@ -1,0 +1,45 @@
+amqp==5.1.1
+asgiref==3.5.2
+backports.zoneinfo==0.2.1; python_version < '3.9'
+beautifulsoup4==4.11.1
+billiard==3.6.4.0
+bs4==0.0.1
+celery==5.2.7
+certifi==2022.5.18.1
+charset-normalizer==2.0.12; python_version >= '3'
+click-didyoumean==0.3.0
+click-plugins==1.1.1
+click-repl==0.2.0
+click==8.1.3
+django-celery-beat==2.3.0
+django-timezone-field==5.0
+django==4.0.5
+flower==1.0.0
+humanize==4.2.1
+idna==3.3; python_version >= '3'
+kombu==5.2.4
+numpy==1.23.0
+packaging==21.3
+pandas==1.4.2
+patsy==0.5.2
+plotly-express==0.4.1
+plotly==5.8.2
+prometheus-client==0.14.1
+prompt-toolkit==3.0.29
+pyparsing==3.0.9
+python-crontab==2.6.0
+python-dateutil==2.8.2
+pytz==2022.1
+redis==3.5.3
+requests==2.27.1
+scipy==1.8.1
+six==1.16.0
+soupsieve==2.3.2.post1
+sqlparse==0.4.2
+statsmodels==0.13.2
+tenacity==8.0.1
+tornado==6.1
+tzdata==2022.1
+urllib3==1.26.9
+vine==5.0.0
+wcwidth==0.2.5

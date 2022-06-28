@@ -1,0 +1,108 @@
+[2022-06-28 07:55:45,116: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-06-28 07:55:45,131: INFO/MainProcess] mingle: searching for neighbors
+[2022-06-28 07:55:46,163: INFO/MainProcess] mingle: all alone
+[2022-06-28 07:55:46,198: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning:
+
+Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+
+
+[2022-06-28 07:55:46,198: INFO/MainProcess] celery@84c97f88a6ae ready.
+[2022-06-28 07:59:46,828: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-06-28 07:59:46,844: INFO/MainProcess] mingle: searching for neighbors
+[2022-06-28 07:59:47,883: INFO/MainProcess] mingle: all alone
+[2022-06-28 07:59:47,912: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning:
+
+Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+
+
+[2022-06-28 07:59:47,913: INFO/MainProcess] celery@9d73cfd8f05e ready.
+[2022-06-28 11:02:02,615: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 2.00 seconds... (1/100)
+
+[2022-06-28 11:02:04,622: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 4.00 seconds... (2/100)
+
+[2022-06-28 11:02:08,629: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 6.00 seconds... (3/100)
+
+[2022-06-28 11:02:14,637: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 8.00 seconds... (4/100)
+
+[2022-06-28 11:02:22,682: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 10.00 seconds... (5/100)
+
+[2022-06-28 11:02:32,698: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 12.00 seconds... (6/100)
+
+[2022-06-28 11:02:44,712: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 14.00 seconds... (7/100)
+
+[2022-06-28 11:02:58,768: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 16.00 seconds... (8/100)
+
+[2022-06-28 11:03:14,787: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 18.00 seconds... (9/100)
+
+[2022-06-28 11:03:32,807: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 20.00 seconds... (10/100)
+
+[2022-06-28 11:03:52,830: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 22.00 seconds... (11/100)
+
+[2022-06-28 11:04:14,967: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 24.00 seconds... (12/100)
+
+[2022-06-28 11:04:38,994: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 26.00 seconds... (13/100)
+
+[2022-06-28 11:05:05,021: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 28.00 seconds... (14/100)
+
+[2022-06-28 11:05:33,051: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 30.00 seconds... (15/100)
+
+[2022-06-28 11:06:03,083: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 32.00 seconds... (16/100)
+
+[2022-06-28 11:06:35,117: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 32.00 seconds... (16/100)
+
+[2022-06-28 11:07:07,154: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 99 connecting to localhost:6379. Cannot assign requested address..
+Trying again in 32.00 seconds... (16/100)
+
+[2022-06-28 11:07:41,839: INFO/MainProcess] Connected to redis://redis:6379//
+[2022-06-28 11:07:41,859: INFO/MainProcess] mingle: searching for neighbors
+[2022-06-28 11:07:42,883: INFO/MainProcess] mingle: all alone
+[2022-06-28 11:07:42,916: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning:
+
+Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+
+
+[2022-06-28 11:07:42,917: INFO/MainProcess] celery@f81e0e4435cb ready.
+[2022-06-28 11:17:09,817: INFO/MainProcess] Task scrape.tasks.say_hello[72b9ced3-c6d6-45c3-b4b9-0d534d926491] received
+[2022-06-28 11:17:09,834: INFO/MainProcess] Task scrape.tasks.archive_prices[15544f7c-496f-4a7e-be54-764786c12167] received
+[2022-06-28 11:17:09,848: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[72b9ced3-c6d6-45c3-b4b9-0d534d926491] succeeded in 0.027246999001363292s: 'Hello from views'
+[2022-06-28 11:17:10,023: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 11:17:10,038: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 11:17:10,043: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 11:17:10,048: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 11:17:10,053: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 11:17:10,059: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 11:17:10,065: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 11:17:10,077: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 11:17:10,082: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 11:17:10,086: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 11:17:10,091: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 11:17:10,095: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 11:17:10,099: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 11:17:10,103: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 11:17:10,108: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 11:17:10,113: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 11:17:10,120: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 11:17:10,125: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 11:17:10,136: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 11:17:10,141: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 11:17:10,143: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[15544f7c-496f-4a7e-be54-764786c12167] succeeded in 0.2872428699993179s: None
