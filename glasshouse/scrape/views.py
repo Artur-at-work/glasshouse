@@ -69,13 +69,14 @@ def scrape(request):
     # Parse single house page for Prce, Size, etc.
     #with open("page1.html") as fp:
     #    soup = BeautifulSoup(fp, 'html.parser')
-    say_hello.delay("from views")
-    archive_prices.delay()
+
+    #say_hello.delay("from views")
+    #archive_prices.delay()
     
-    if not has_new_property(soup):
-        # no updates on page, do nothing
-        print("No updates in search results")
-        return redirect("../")
+    # if not has_new_property(soup):
+    #     # no updates on page, do nothing
+    #     print("No updates in search results")
+    #     return redirect("../")
 
     for result in soup.find_all('div',  {'class': 'search-result'}):
         # print(result.prettify())

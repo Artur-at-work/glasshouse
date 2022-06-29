@@ -106,3 +106,299 @@ Using settings.DEBUG leads to a memory
 [2022-06-28 11:17:10,136: WARNING/ForkPoolWorker-1] Saving price record for 127661524
 [2022-06-28 11:17:10,141: WARNING/ForkPoolWorker-1] Saving price record for 127072405
 [2022-06-28 11:17:10,143: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[15544f7c-496f-4a7e-be54-764786c12167] succeeded in 0.2872428699993179s: None
+[2022-06-28 12:43:24,082: INFO/MainProcess] Task scrape.tasks.say_hello[44a499b4-3b49-43b2-8a14-0778e48e5745] received
+[2022-06-28 12:43:24,088: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[44a499b4-3b49-43b2-8a14-0778e48e5745] succeeded in 0.003689141998620471s: 'Hello from views'
+[2022-06-28 12:43:24,094: INFO/MainProcess] Task scrape.tasks.archive_prices[af98c050-18db-4cb5-9ba2-215c95bb3b5a] received
+[2022-06-28 12:43:24,148: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 12:43:24,153: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 12:43:24,157: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 12:43:24,161: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 12:43:24,166: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 12:43:24,170: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 12:43:24,174: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 12:43:24,178: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 12:43:24,182: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 12:43:24,186: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 12:43:24,190: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 12:43:24,205: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 12:43:24,214: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 12:43:24,219: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 12:43:24,223: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 12:43:24,230: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 12:43:24,234: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 12:43:24,238: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 12:43:24,243: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 12:43:24,247: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 12:43:24,248: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[af98c050-18db-4cb5-9ba2-215c95bb3b5a] succeeded in 0.15208853899821406s: None
+[2022-06-28 13:12:52,980: INFO/MainProcess] Connected to redis://redis:6379//
+[2022-06-28 13:12:52,990: INFO/MainProcess] mingle: searching for neighbors
+[2022-06-28 13:12:54,011: INFO/MainProcess] mingle: all alone
+[2022-06-28 13:12:54,046: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning:
+
+Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+
+
+[2022-06-28 13:12:54,050: INFO/MainProcess] celery@3b3571f815f5 ready.
+[2022-06-28 14:22:39,673: INFO/MainProcess] Task scrape.tasks.archive_prices[0b0d2eb1-6e90-4ab5-a2b5-e87010bc93cd] received
+[2022-06-28 14:22:39,774: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 14:22:39,780: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 14:22:39,785: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 14:22:39,789: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 14:22:39,793: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 14:22:39,797: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 14:22:39,802: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 14:22:39,806: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 14:22:39,811: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 14:22:39,816: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 14:22:39,820: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 14:22:39,825: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 14:22:39,829: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 14:22:39,834: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 14:22:39,838: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 14:22:39,842: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 14:22:39,846: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 14:22:39,851: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 14:22:39,856: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 14:22:39,860: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 14:22:39,870: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[0b0d2eb1-6e90-4ab5-a2b5-e87010bc93cd] succeeded in 0.16912913200212643s: None
+[2022-06-28 14:23:39,562: INFO/MainProcess] Task scrape.tasks.archive_prices[df160070-b62b-43d6-a404-5930e51c1c99] received
+[2022-06-28 14:23:39,592: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 14:23:39,596: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 14:23:39,601: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 14:23:39,605: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 14:23:39,609: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 14:23:39,614: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 14:23:39,617: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 14:23:39,621: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 14:23:39,625: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 14:23:39,630: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 14:23:39,634: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 14:23:39,640: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 14:23:39,646: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 14:23:39,650: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 14:23:39,655: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 14:23:39,659: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 14:23:39,664: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 14:23:39,668: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 14:23:39,673: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 14:23:39,677: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 14:23:39,679: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[df160070-b62b-43d6-a404-5930e51c1c99] succeeded in 0.11507691100268858s: None
+[2022-06-28 15:42:25,316: INFO/MainProcess] Task scrape.tasks.say_hello[2a3a4ff5-9034-4251-8a57-e44d956dd71c] received
+[2022-06-28 15:42:25,320: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[2a3a4ff5-9034-4251-8a57-e44d956dd71c] succeeded in 0.0026763839996419847s: 'Hello from views'
+[2022-06-28 15:42:25,326: INFO/MainProcess] Task scrape.tasks.archive_prices[89888fbb-673c-45c7-8540-7153704773fb] received
+[2022-06-28 15:42:25,409: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 15:42:25,417: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 15:42:25,421: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 15:42:25,428: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 15:42:25,431: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 15:42:25,435: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 15:42:25,438: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 15:42:25,443: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 15:42:25,448: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 15:42:25,455: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 15:42:25,459: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 15:42:25,464: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 15:42:25,469: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 15:42:25,473: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 15:42:25,480: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 15:42:25,493: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 15:42:25,500: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 15:42:25,507: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 15:42:25,513: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 15:42:25,519: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 15:42:25,521: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[89888fbb-673c-45c7-8540-7153704773fb] succeeded in 0.1923912379934336s: None
+[2022-06-28 15:43:24,641: INFO/MainProcess] Task scrape.tasks.say_hello[bf573e28-5604-45a4-91f5-973b1e7bdcc3] received
+[2022-06-28 15:43:24,644: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[bf573e28-5604-45a4-91f5-973b1e7bdcc3] succeeded in 0.001735399004246574s: 'Hello from views'
+[2022-06-28 15:43:24,654: INFO/MainProcess] Task scrape.tasks.archive_prices[db10d3a2-a38f-41fe-af88-88e828b0ac81] received
+[2022-06-28 15:43:24,766: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 15:43:24,797: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 15:43:24,845: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 15:43:24,885: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 15:43:24,926: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 15:43:24,930: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 15:43:24,935: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 15:43:24,940: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 15:43:24,946: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 15:43:24,951: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 15:43:24,957: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 15:43:24,961: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 15:43:24,966: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 15:43:24,970: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 15:43:24,974: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 15:43:24,978: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 15:43:24,983: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 15:43:25,015: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 15:43:25,020: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 15:43:25,024: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 15:43:25,025: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[db10d3a2-a38f-41fe-af88-88e828b0ac81] succeeded in 0.37011809300020104s: None
+[2022-06-28 15:43:49,585: INFO/MainProcess] Task scrape.tasks.say_hello[e2f024a8-ac33-481f-a478-536564dec7a3] received
+[2022-06-28 15:43:49,589: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[e2f024a8-ac33-481f-a478-536564dec7a3] succeeded in 0.0017133009969256818s: 'Hello from views'
+[2022-06-28 15:43:49,594: INFO/MainProcess] Task scrape.tasks.archive_prices[07c48b3f-e30b-4ef2-9b2c-10878cfaafe3] received
+[2022-06-28 15:43:49,662: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 15:43:49,667: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 15:43:49,672: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 15:43:49,676: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 15:43:49,681: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 15:43:49,685: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 15:43:49,689: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 15:43:49,693: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-28 15:43:49,699: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 15:43:49,707: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 15:43:49,713: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 15:43:49,718: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 15:43:49,723: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 15:43:49,727: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 15:43:49,732: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 15:43:49,736: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 15:43:49,741: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 15:43:49,745: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 15:43:49,751: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 15:43:49,756: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 15:43:49,768: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-28 15:43:49,773: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-28 15:43:49,777: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-28 15:43:49,782: WARNING/ForkPoolWorker-1] Saving price record for 128075080
+[2022-06-28 15:43:49,794: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-28 15:43:49,799: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-28 15:43:49,804: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-28 15:43:49,809: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-28 15:43:49,814: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-28 15:43:49,819: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-28 15:43:49,824: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-28 15:43:49,828: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-28 15:43:49,832: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-28 15:43:49,837: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-28 15:43:49,842: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-28 15:43:49,847: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-28 15:43:49,853: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-28 15:43:49,859: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-28 15:43:49,864: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-28 15:43:49,870: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-28 15:43:49,871: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[07c48b3f-e30b-4ef2-9b2c-10878cfaafe3] succeeded in 0.2751916170018376s: None
+[2022-06-29 01:00:00,011: INFO/MainProcess] Task scrape.tasks.archive_prices[62c771ff-d31b-4fab-a228-344b57112f92] received
+[2022-06-29 01:00:00,068: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 01:00:00,079: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 01:00:00,085: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 01:00:00,090: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 01:00:00,095: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 01:00:00,099: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 01:00:00,104: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 01:00:00,108: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-29 01:00:00,112: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 01:00:00,117: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 01:00:00,123: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 01:00:00,127: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 01:00:00,131: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 01:00:00,136: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 01:00:00,140: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 01:00:00,144: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 01:00:00,149: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 01:00:00,153: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 01:00:00,157: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 01:00:00,161: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 01:00:00,166: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 01:00:00,170: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 01:00:00,174: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 01:00:00,178: WARNING/ForkPoolWorker-1] Saving price record for 128075080
+[2022-06-29 01:00:00,184: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 01:00:00,189: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 01:00:00,195: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 01:00:00,199: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 01:00:00,203: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 01:00:00,207: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 01:00:00,211: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 01:00:00,215: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 01:00:00,220: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 01:00:00,225: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 01:00:00,229: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 01:00:00,236: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 01:00:00,241: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 01:00:00,245: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 01:00:00,249: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 01:00:00,267: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 01:00:00,272: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 01:00:00,276: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 01:00:00,279: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 01:00:00,284: WARNING/ForkPoolWorker-1] Saving price record for 128075080
+[2022-06-29 01:00:00,289: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 01:00:00,293: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 01:00:00,298: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 01:00:00,304: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 01:00:00,308: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 01:00:00,313: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 01:00:00,317: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 01:00:00,321: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 01:00:00,326: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 01:00:00,330: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 01:00:00,335: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 01:00:00,341: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 01:00:00,345: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 01:00:00,351: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 01:00:00,356: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 01:00:00,360: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 01:00:00,362: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[62c771ff-d31b-4fab-a228-344b57112f92] succeeded in 0.3488609159976477s: None
+[2022-06-29 02:31:33,871: INFO/MainProcess] Task scrape.tasks.say_hello[3c4face4-39ff-4c7c-99ab-fd9efe338a23] received
+[2022-06-29 02:31:33,875: INFO/ForkPoolWorker-1] Task scrape.tasks.say_hello[3c4face4-39ff-4c7c-99ab-fd9efe338a23] succeeded in 0.00265087399748154s: 'Hello from views'
+[2022-06-29 02:31:33,882: INFO/MainProcess] Task scrape.tasks.archive_prices[c1324c24-e3da-4346-960f-30ca618048d8] received
+[2022-06-29 02:31:33,968: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 02:31:33,973: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 02:31:33,978: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 02:31:33,984: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 02:31:33,988: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 02:31:33,994: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 02:31:33,999: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 02:31:34,003: WARNING/ForkPoolWorker-1] Saving price record for 125462066
+[2022-06-29 02:31:34,008: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 02:31:34,032: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 02:31:34,037: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 02:31:34,042: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 02:31:34,046: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 02:31:34,050: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 02:31:34,055: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 02:31:34,061: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 02:31:34,068: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 02:31:34,072: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 02:31:34,076: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 02:31:34,081: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 02:31:34,087: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 02:31:34,091: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 02:31:34,096: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 02:31:34,100: WARNING/ForkPoolWorker-1] Saving price record for 128075080
+[2022-06-29 02:31:34,106: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 02:31:34,110: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 02:31:34,114: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 02:31:34,118: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 02:31:34,122: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 02:31:34,126: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 02:31:34,130: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 02:31:34,135: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 02:31:34,139: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 02:31:34,143: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 02:31:34,147: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 02:31:34,152: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 02:31:34,156: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 02:31:34,160: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 02:31:34,164: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 02:31:34,169: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 02:31:34,174: WARNING/ForkPoolWorker-1] Saving price record for 127636921
+[2022-06-29 02:31:34,179: WARNING/ForkPoolWorker-1] Saving price record for 126485730
+[2022-06-29 02:31:34,184: WARNING/ForkPoolWorker-1] Saving price record for 127661523
+[2022-06-29 02:31:34,206: WARNING/ForkPoolWorker-1] Saving price record for 128075080
+[2022-06-29 02:31:34,211: WARNING/ForkPoolWorker-1] Saving price record for 127661519
+[2022-06-29 02:31:34,217: WARNING/ForkPoolWorker-1] Saving price record for 127072604
+[2022-06-29 02:31:34,222: WARNING/ForkPoolWorker-1] Saving price record for 127072600
+[2022-06-29 02:31:34,227: WARNING/ForkPoolWorker-1] Saving price record for 126272408
+[2022-06-29 02:31:34,233: WARNING/ForkPoolWorker-1] Saving price record for 127072581
+[2022-06-29 02:31:34,239: WARNING/ForkPoolWorker-1] Saving price record for 124074423
+[2022-06-29 02:31:34,245: WARNING/ForkPoolWorker-1] Saving price record for 127783178
+[2022-06-29 02:31:34,250: WARNING/ForkPoolWorker-1] Saving price record for 127740078
+[2022-06-29 02:31:34,255: WARNING/ForkPoolWorker-1] Saving price record for 124844545
+[2022-06-29 02:31:34,261: WARNING/ForkPoolWorker-1] Saving price record for 128043906
+[2022-06-29 02:31:34,267: WARNING/ForkPoolWorker-1] Saving price record for 127951932
+[2022-06-29 02:31:34,273: WARNING/ForkPoolWorker-1] Saving price record for 125885466
+[2022-06-29 02:31:34,278: WARNING/ForkPoolWorker-1] Saving price record for 127962285
+[2022-06-29 02:31:34,283: WARNING/ForkPoolWorker-1] Saving price record for 127666764
+[2022-06-29 02:31:34,289: WARNING/ForkPoolWorker-1] Saving price record for 127661524
+[2022-06-29 02:31:34,293: WARNING/ForkPoolWorker-1] Saving price record for 127072405
+[2022-06-29 02:31:34,295: INFO/ForkPoolWorker-1] Task scrape.tasks.archive_prices[c1324c24-e3da-4346-960f-30ca618048d8] succeeded in 0.41054173100565095s: None
