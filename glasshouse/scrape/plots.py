@@ -3,7 +3,6 @@ import plotly.express as px
 import plotly.graph_objs as go
 
 from plotly.offline import plot
-from plotly.graph_objects import Scatter
 from django.db import connection
 
 def plot_price_history():

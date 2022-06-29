@@ -6,5 +6,4 @@ urlpatterns = [
   path('', houses_list, name="home"),
   path('clean/', clean, name="clean"),
   path('price_history/', price_history, name="price_history")
-  # path('', total_listings, name="total_listings"),
 ]

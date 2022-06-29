@@ -4,7 +4,7 @@ class House(models.Model):
     house_id = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     size_m2 = models.FloatField()
-    price = models.CharField(max_length=100)
+    price = models.FloatField()
     price_per_m2 = models.FloatField()
     bedrooms = models.IntegerField(null=True, blank=True)
     bathrooms = models.IntegerField(null=True, blank=True)
