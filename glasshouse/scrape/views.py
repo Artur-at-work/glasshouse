@@ -80,33 +80,51 @@ def scrape(request):
 
     for result in soup.find_all('div',  {'class': 'search-result'}):
         # print(result.prettify())
-        house = House()
-        house.house_id = result.find('button', {'class': 'property-card-save-btn'}).get('data-property-id')
-        house.address = result.find('span', {'class': 'property-address'}).text
-
+        # scrape data
+        house_id = result.find('button', {'class': 'property-card-save-btn'}).get('data-property-id')
+        address = result.find('span', {'class': 'property-address'}).text
+        
         size_txt = result.find('div', {'class': 'size'}).text # 765 sq. ft. - 71.11 m2
-        house.size_m2 = re.search('ft. - (.*) m2', size_txt).group(1) # 71.11
+        size_m2 = re.search('ft. - (.*) m2', size_txt).group(1) # 71.11
 
-        house.price = result.find('span', {'dir': 'ltr'}).text
+        price = result.find('span', {'dir': 'ltr'}).text # TODO: change to decimal
+        price_per_m2 = round(float(price.replace('$','').replace(',','')) / float(size_m2), 2)
 
-        house.price_per_m2 = round(float(house.price.replace('$','').replace(',','')) / float(house.size_m2), 2)
+        url_path = result.find('a', {'class': 'search-result-photo'}).get('href')
+        url = url_base + url_path
 
         # re.search in several identical spans with different text
         for span in result.find_all('span', {'class': 'search-result-label'}):
             if span.find(text=re.compile("bedrooms")): # 3 bedrooms - 1 bath
-                house.bedrooms = span.text[:1]
-                house.bathrooms = re.search('bedrooms - (.*) bath', span.text).group(1)
+                bedrooms = span.text[:1]
+                bathrooms = re.search('bedrooms - (.*) bath', span.text).group(1)
                 break
-        
-        # if not house.bedrooms:
-        #     house.bedrooms = 0
-        # if not house.bathrooms :
-        #     house.bathrooms = 0
 
-        url_path = result.find('a', {'class': 'search-result-photo'}).get('href')
-        house.url = url_base + url_path
-        #house.image = result.find('div', {'class': 'search-result-img'}).text # 765 sq. ft. - 71.11 m2
+        if House.objects.filter(house_id = house_id).exists():
+            if House.objects.filter(
+                house_id = house_id,
+                address = address,
+                price = price,
+                size_m2 = size_m2,
+                bedrooms = bedrooms,
+                bathrooms = bathrooms
+                ):
+                # identical record exists
+                continue
+        
+        # Create/update the record
+        house = House()
+        house.house_id = house_id
+        house.address = address
+        house.size_m2 = size_m2
+        house.price = price
+        house.price_per_m2 = price_per_m2
+        house.url = url
+        house.bedrooms = bedrooms
+        house.bathrooms = bathrooms
+        # TODO: save creation date to track the age of this listing. Don't edit when update()
         house.save()
+
         #break
     return redirect("../")
     # Create your views here.
