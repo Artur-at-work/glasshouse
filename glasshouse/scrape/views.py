@@ -49,12 +49,23 @@ def scrape(request):
             if span.find(text=re.compile("bedrooms")): # "3 bedrooms - 1 bath"
                 bedrooms = span.text[:1]
                 bathrooms = re.search('bedrooms - (.*) bath', span.text).group(1)
-                break
+            elif span.find(text=re.compile("Taiwan")): #TODO: regex if other country
+                location = span.text.strip().split(',')
+                if len(location) != 3:
+                    # missing location
+                    continue
+                
+                district = location[0].strip()
+                city = location[1].strip()
+                country = location[2].strip()
 
         if House.objects.filter(house_id = house_id).exists():
             if House.objects.filter(
                 house_id = house_id,
                 address = address,
+                district = district,
+                city = city,
+                country = country,
                 price = price,
                 size_m2 = size_m2,
                 bedrooms = bedrooms,
@@ -67,6 +78,9 @@ def scrape(request):
         house = House()
         house.house_id = house_id
         house.address = address
+        house.district = district
+        house.city = city
+        house.country = country
         house.size_m2 = size_m2
         house.price = price
         house.price_per_m2 = price_per_m2

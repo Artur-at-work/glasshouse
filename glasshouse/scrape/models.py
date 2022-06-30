@@ -3,6 +3,9 @@ from django.db import models
 class House(models.Model):
     house_id = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
+    district = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True)
     size_m2 = models.FloatField()
     price = models.FloatField()
     price_per_m2 = models.FloatField()

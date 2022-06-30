@@ -31,23 +31,29 @@
         <thead>
             <tr>
                 <th>Street</th>
+                <th>District</th>
+                <th>City</th>
                 <th>Price $ NTD</th>
                 <th>Price Per Square Meter</th>
                 <th>Size in Square Meters</th>
                 <th>Bedrooms</th>
                 <th>Bathrooms</th>
+                <th>ID</th>
             </tr>
         </thead>
         <tbody>
             {% for object in object_list %}
             {% load humanize %}
             <tr>
-                <td><h6 class="card-title">{{ object.address }} ID: {{ object.house_id }}</h6></td>
+                <td><h6 class="card-title">{{ object.address }}</h6></td>
+                <td><h6 class="card-title">{{ object.district }}</h6></td>
+                <td><h6 class="card-title">{{ object.city }}</h6></td>
                 <td><a href="{{object.url}}" target="_blank"><h5 class="card-title">${{ object.price|floatformat:1|intcomma }}</h5></a></td>
                 <td><h6 class="card-title">${{ object.price_per_m2|floatformat:1|intcomma }}</h6></td>
                 <td><h6 class="card-title">{{ object.size_m2 }}</h6></td>
                 <td><h6 class="card-title">{{ object.bedrooms }}</h6></td>
                 <td><h6 class="card-title">{{ object.bathrooms }}</h6></td>
+                <td><h6 class="card-title">{{ object.house_id }}</h6></td>
             </tr>
             {% endfor %}
         </tbody>
