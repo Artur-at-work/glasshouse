@@ -1,2 +1,2 @@
-*.sqlite3
-celery.log
+glasshouse/db.sqlite3
+glasshouse/celery.log
