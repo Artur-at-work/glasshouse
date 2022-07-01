@@ -1,2 +1,3 @@
-glasshouse/db.sqlite3
-glasshouse/celery.log
+*.sqlite3
+*.log
+*.pyc
