@@ -4,19 +4,18 @@ from django.utils.timezone import now
 class House(models.Model): 
     date_published = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(default=now, blank=True)
-    house_id = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
+    house_id = models.CharField(max_length=100) # TODO: non-editable after debug tests
+    address = models.CharField(max_length=100, null=True, blank=True)
     district = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
-    size_m2 = models.FloatField()
+    size_m2 = models.FloatField(null=True, blank=True)
     price = models.FloatField()
     price_per_m2 = models.FloatField()
     bedrooms = models.IntegerField(null=True, blank=True, default = 0)
     bathrooms = models.IntegerField(null=True, blank=True, default = 0)
-    url = models.TextField()
+    url = models.TextField(null=True, blank=True)
     image = models.URLField(null=True, blank=True)
-    #newly_listed = models.BooleanField(default = False)
     status = models.CharField(max_length=100, blank=True, default="unlisted")
     # TODO: add year built from house page
 
@@ -37,20 +36,19 @@ class PriceHistory(models.Model):
         return self.house_id
 
 class SoldHouses(models.Model):
-    #sold_date = models.DateTimeField(auto_now_add=True)
-    #pub_date = models.DateTimeField(null=True, blank=True, default=datetime.date.today)
-    house_id = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
+    date_published = models.DateTimeField(null=True, blank=True)
+    house_id = models.CharField(max_length=100) # TODO: non-editable after debug tests
+    address = models.CharField(max_length=100, null=True, blank=True)
     district = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
-    size_m2 = models.FloatField()
+    size_m2 = models.FloatField(null=True, blank=True)
     price = models.FloatField()
     price_per_m2 = models.FloatField()
     bedrooms = models.IntegerField(null=True, blank=True, default = 0)
     bathrooms = models.IntegerField(null=True, blank=True, default = 0)
-    url = models.TextField()
+    url = models.TextField(null=True, blank=True)
     image = models.URLField(null=True, blank=True)
-    newly_listed = models.BooleanField(default = False)
-    
-# Create your models here.
+    status = models.CharField(max_length=100, null=True)
+    date_sold = models.DateTimeField(default=now, editable=False, null=True, blank=True) # same approach in House?
+    # TODO: add year built from house page

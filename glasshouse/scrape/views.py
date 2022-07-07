@@ -5,7 +5,7 @@ import datetime
 
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup
-from scrape.models import House, PropertyCountByType
+from scrape.models import House, PropertyCountByType, SoldHouses
 from django.http import HttpResponse
 from django.utils import timezone
 
@@ -122,7 +122,6 @@ def scrape(request):
 
 
     return redirect("../")
-    # Create your views here.
 
 def get_file_soup(file_path):
     with open(file_path) as fp:
@@ -134,7 +133,7 @@ def scrape_file(request):
     url_path = "/for-sale-residential/Taiwan/Yilan-City/Luodong-Township?pageNo=1"
 
     module_dir = os.path.dirname(__file__)  # get current directory
-    file_path = os.path.join(module_dir, "page1.html")
+    file_path = os.path.join(module_dir, "tests/page1.html")
     soup = get_file_soup(file_path)
     total_results = soup.find('div',  {'class': 'total-search-results'}).text
 
@@ -210,7 +209,6 @@ def scrape_file(request):
                     ):
                     # already in db. Skip
                     print("Skipped" + house_id)
-                    counter+=1
                     continue
             
             defaults = dict(
@@ -227,13 +225,8 @@ def scrape_file(request):
                 status = status,
                 date_modified = timezone.now()
             )
-
             House.objects.update_or_create(house_id=house_id, defaults=defaults)
-
-    print("couter:%s"%counter)
     return redirect("../")
-    # Create your views here.
-
 
 def houses_list(request):
     houses = House.objects.all()[::-1]
@@ -241,6 +234,13 @@ def houses_list(request):
         'object_list': houses,
     }
     return render(request, "scrape/home.html", context)
+
+def sold_houses_list(request):
+    houses = SoldHouses.objects.all()[::-1]
+    context = {
+        'object_list': houses,
+    }
+    return render(request, "scrape/sold_houses.html", context)
 
 def clean(request):
     houses = House.objects.all()
@@ -250,3 +250,28 @@ def clean(request):
 def price_history(request):
     plotly_plot_obj = plot_price_history()
     return render(request, "scrape/price_history.html", context={'plot_div': plotly_plot_obj})
+
+def move_sold_houses():
+    for h in House.objects.filter(status="sold"):
+        SoldHouses.objects.create(
+            date_published = h.date_published,
+            house_id = h.house_id,
+            address = h.address,
+            district = h.district,
+            city = h.city,
+            country = h.country,
+            size_m2 = h.size_m2,
+            price = h.price,
+            price_per_m2 = h.price_per_m2,
+            bedrooms = h.bedrooms,
+            bathrooms = h.bathrooms,
+            url = h.url,
+            image = h.image,
+            status = h.status
+        )
+    House.objects.filter(status="sold").delete()
+    
+
+
+
+

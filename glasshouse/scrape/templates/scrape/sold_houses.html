@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title></title>
+      <title>Sold Houses History</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
       <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
@@ -16,12 +16,9 @@
       </script>
 
       <div class="jumbotron">
-        <center><h3>GlassHouse</h3>
-          <a href="{% url 'scrape_file' %}" class="btn btn-success">Get Listings</a>
-          <a href="{% url 'clean' %}" class="btn btn-success">Clean All</a> 
-          <BR><BR>
+        <center><h3>Sold Houses History</h3>
+          <a href="{% url 'home' %}" class="btn btn-success">Home</a>
           <a href="{% url 'price_history' %}" target="_blank" class="btn btn-success">Price History</a>
-          <a href="{% url 'sold_houses' %}" class="btn btn-success">Sold Houses</a>
           <h6>Total Listings: {{ object_list|length }}</h6>
 
         </center>
@@ -41,8 +38,7 @@
                 <th>Bathrooms</th>
                 <th>ID</th>
                 <th>Status</th>
-                <th>Published On</th>
-                <th>Modified On</th>
+                <th>Sold On</th>
             </tr>
         </thead>
         <tbody>
@@ -60,7 +56,6 @@
                 <td><h6 class="card-title">{{ object.house_id }}</h6></td>
                 <td><h6 class="card-title">{{ object.status }}</h6></td>
                 <td><h6 class="card-title">{{ object.date_published }}</h6></td>
-                <td><h6 class="card-title">{{ object.date_modified }}</h6></td>
             </tr>
             {% endfor %}
         </tbody>
