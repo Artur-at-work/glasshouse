@@ -23,7 +23,12 @@
           <a href="{% url 'price_history' %}" target="_blank" class="btn btn-success">Price History</a>
           <a href="{% url 'sold_houses' %}" class="btn btn-success">Sold Houses</a>
           <h6>Total Listings: {{ object_list|length }}</h6>
-
+          <form action="" method="post">
+            {% csrf_token %}
+            {{ form.city }}
+            {{ form.district }}
+            <input type="submit" value="Apply">
+          </form>
         </center>
       </div>
       

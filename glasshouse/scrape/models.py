@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
+from django import forms
 
 class House(models.Model): 
     date_published = models.DateTimeField(auto_now_add=True)
@@ -52,3 +53,27 @@ class SoldHouses(models.Model):
     status = models.CharField(max_length=100, null=True)
     date_sold = models.DateTimeField(default=now, editable=False, null=True, blank=True) # same approach in House?
     # TODO: add year built from house page
+
+CITY_CHOICES = [
+    ('*','---City---'),
+    ('Taipei City','Taipei City'),
+    ('New Taipei City','New Taipei City'),
+    ('Taoyuan City','Taoyuan City'),
+    ('Taichung City', 'Taichung City'),
+    ('Yilan County','Yilan County'),
+    ('Tainan City', 'Tainan City'),
+    ('Taitung City', 'Taitung City'),
+    ]
+
+DISTRICT_CHOICES = [
+    ('*', '---District---'),
+    ('Luodong Township', 'Luodong Township'),
+    ('Jiaoxi Township', 'Jiaoxi Township'),
+]
+
+class TaiwanCity(models.Model):
+    city = models.CharField(max_length=100, choices=CITY_CHOICES, default="---City---")
+    district = models.CharField(max_length=100, choices=DISTRICT_CHOICES, default="---District---")
+
+    def __str__(self):
+        return self.city
