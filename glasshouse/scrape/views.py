@@ -11,7 +11,7 @@ from django.utils import timezone
 
 from .plots import *
 
-from .forms import CityDropdown
+#from .forms import CityDropdown
 from django.forms import ModelForm
 
 # Returns True if property count has changed
@@ -231,21 +231,25 @@ def scrape_file(request):
             House.objects.update_or_create(house_id=house_id, defaults=defaults)
     return redirect("../")
 
+def city_list(request):
+    pass
+
 def houses_list(request):
+    city_qs = TaiwanCity.objects.all()
     if request.method == 'POST':
-        form = CityDropdown(request.POST)
-        if form.is_valid():
-            form.instance.city = form.cleaned_data['city']
-            #houses = House.objects.all().filter(city=form.instance.city)
-            form.instance.district = form.cleaned_data['district']
+        print("request.method: %s" %request.method)
+        print("POST var: %s" % request.POST['city-form'])
+        city_filter =  request.POST.get('city-form')
+        houses = House.objects.all().filter(city=city_filter)
     else:
         print("request is not POST")
-        form = CityDropdown()
+        houses = House.objects.all()
+        #form = CityDropdown()
     #houses = House.objects.all()[::-1]
-    houses = House.objects.all().filter(city=form.instance.city)
+    print("city_qs:%s" %city_qs)
     context = {
         'object_list': houses,
-        'form' : form,
+        'city_qs' : city_qs,
     }
     return render(request, "scrape/home.html", context)
 
@@ -284,19 +288,3 @@ def move_sold_houses():
             status = h.status
         )
     House.objects.filter(status="sold").delete()
-    
-def filter_city_view(request):
-    # model = TaiwanCity
-    # form_class = CityDropdown
-    # template_name = 'scrape/home.html'
-    # success_url = 'scrape/home.html'
-    if request.method == 'POST':
-        form = CityDropdown(request.POST)
-        if form.is_valid():
-            form.instance.city = form.cleaned_data['city']
-            form.instance.district = form.cleaned_data['district']
-    else:
-        print("request is not POST")
-        form = CityDropdown()
-
-    return form

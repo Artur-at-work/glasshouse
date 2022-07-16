@@ -23,12 +23,19 @@
           <a href="{% url 'price_history' %}" target="_blank" class="btn btn-success">Price History</a>
           <a href="{% url 'sold_houses' %}" class="btn btn-success">Sold Houses</a>
           <h6>Total Listings: {{ object_list|length }}</h6>
-          <form action="" method="post">
+
+          <form action="{% url 'home' %}" method="post" id="city-form">
             {% csrf_token %}
-            {{ form.city }}
-            {{ form.district }}
+            <div class="form-group d-inline-block">
+              <select class="form-control" name="city-form">
+                {% for city in city_qs %}
+                <option value="{{ city.name }}">{{ city.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
             <input type="submit" value="Apply">
           </form>
+
         </center>
       </div>
       
@@ -77,3 +84,4 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+

@@ -72,8 +72,15 @@ DISTRICT_CHOICES = [
 ]
 
 class TaiwanCity(models.Model):
-    city = models.CharField(max_length=100, choices=CITY_CHOICES, default="---City---")
-    district = models.CharField(max_length=100, choices=DISTRICT_CHOICES, default="---District---")
-
+    name = models.CharField(max_length=100, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True, default="Taiwan")
+    
     def __str__(self):
-        return self.city
+        return str(self.name)
+
+class TaiwanDistrict(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    city = models.ForeignKey(TaiwanCity, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.city}-{self.name}"
