@@ -30,6 +30,7 @@ tenacity = "==8.0.1"
 urllib3 = "==1.26.9"
 flower = "*"
 django-celery-beat = "*"
+celery = "*"
 
 [dev-packages]
 
