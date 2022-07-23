@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'scrape.apps.ScrapeConfig',
+    'display_houses.apps.DisplayHousesConfig',
     'django_celery_beat'
 ]
 

@@ -17,12 +17,14 @@
 
       <div class="jumbotron">
         <center><h3>GlassHouse</h3>
-          <a href="{% url 'scrape_file' %}" class="btn btn-success">Scrape File</a>
+          <!-- <a href="{% url 'scrape_file' %}" class="btn btn-success">Get Listings</a>
           <a href="{% url 'clean' %}" class="btn btn-success">Clean All</a> 
-          <BR><BR>
+          <BR><BR> -->
+          <a href="{% url 'sold_houses' %}" class="btn btn-success">Sold Houses</a>
+          <a href="{% url 'price_history' %}" target="_blank" class="btn btn-success">Price History</a>
           <h6>Total Listings: {{ object_list|length }}</h6>
 
-          <form action="{% url 'home' %}" method="post" id="city-form">
+          <form action="{% url 'index' %}" method="post" id="city-form">
             {% csrf_token %}
             <div class="form-group d-inline-block">
               <select class="form-control" name="city-form">

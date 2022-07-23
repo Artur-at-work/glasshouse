@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from scrape.models import House, PropertyCountByType, SoldHouses, TaiwanCity
 from django.http import HttpResponse
 from django.utils import timezone
+from django.http import HttpResponseRedirect
 
 from .plots import *
 
@@ -231,6 +232,7 @@ def scrape_file(request):
             House.objects.update_or_create(house_id=house_id, defaults=defaults)
     return redirect("../")
 
+
 def city_list(request):
     pass
 
@@ -252,13 +254,6 @@ def houses_list(request):
         'city_qs' : city_qs,
     }
     return render(request, "scrape/home.html", context)
-
-def sold_houses_list(request):
-    houses = SoldHouses.objects.all()[::-1]
-    context = {
-        'object_list' : houses,
-    }
-    return render(request, "scrape/sold_houses.html", context)
 
 def clean(request):
     houses = House.objects.all()
