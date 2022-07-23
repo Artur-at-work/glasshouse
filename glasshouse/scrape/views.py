@@ -6,14 +6,7 @@ import datetime
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup
 from scrape.models import House, PropertyCountByType, SoldHouses, TaiwanCity
-from django.http import HttpResponse
 from django.utils import timezone
-from django.http import HttpResponseRedirect
-
-from .plots import *
-
-#from .forms import CityDropdown
-from django.forms import ModelForm
 
 # Returns True if property count has changed
 def has_new_property(soup):
@@ -260,9 +253,9 @@ def clean(request):
     houses.delete()
     return redirect("../")
 
-def price_history(request):
-    plotly_plot_obj = plot_price_history()
-    return render(request, "scrape/price_history.html", context={'plot_div': plotly_plot_obj})
+# def price_history(request):
+#     plotly_plot_obj = plot_price_history()
+#     return render(request, "scrape/price_history.html", context={'plot_div': plotly_plot_obj})
 
 def move_sold_houses():
     for h in House.objects.filter(status="sold"):

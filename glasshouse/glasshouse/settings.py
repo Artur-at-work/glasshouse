@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+
     'scrape.apps.ScrapeConfig',
     'display_houses.apps.DisplayHousesConfig',
+    'dashboard.apps.DashboardConfig',
     'django_celery_beat'
 ]
 

@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("display_houses.urls")),
     path('scrape/', include("scrape.urls")),
+    path('dashboard/', include("dashboard.urls")),
 ]

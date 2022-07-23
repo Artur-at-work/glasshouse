@@ -1,5 +1,6 @@
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objs as go
 
 from plotly.offline import plot
 from django.db import connection
