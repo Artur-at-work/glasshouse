@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include("display_houses.urls")),
     path('scrape/', include("scrape.urls")),
     path('dashboard/', include("dashboard.urls")),
-]
+] 
+#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

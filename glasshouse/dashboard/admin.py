@@ -1,3 +1,4 @@
 from django.contrib import admin
+from dashboard.models import PriceHistory
 
-# Register your models here.
+admin.site.register(PriceHistory)

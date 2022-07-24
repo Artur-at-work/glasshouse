@@ -5,7 +5,8 @@ import datetime
 
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup
-from scrape.models import House, PropertyCountByType, SoldHouses, TaiwanCity
+from scrape.models import House, PropertyCountByType, SoldHouses
+from display_houses.models import TaiwanCity
 from django.utils import timezone
 
 # Returns True if property count has changed

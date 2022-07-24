@@ -8,7 +8,7 @@ from django.db import connection
 def plot_price_history():
     # direct call to Django SQLite
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM scrape_PriceHistory")
+        cursor.execute("SELECT * FROM dashboard_PriceHistory")
         row = cursor.fetchall()
     
     result_table = pd.DataFrame(row) # TODO: preserve column names

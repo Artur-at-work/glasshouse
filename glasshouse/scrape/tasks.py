@@ -1,5 +1,7 @@
 from celery import shared_task
-from scrape.models import House, PropertyCountByType, PriceHistory
+from scrape.models import House, PropertyCountByType
+from dashboard.models import PriceHistory
+
 from django.utils import timezone
 from celery.contrib import rdb
 

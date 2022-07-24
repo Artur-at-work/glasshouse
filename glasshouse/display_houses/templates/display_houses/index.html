@@ -6,6 +6,12 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
       <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+      <!-- custom css/js -->
+      {% load static %}
+      <script src={% static 'display_houses/main.js' %} defer></script>
+      <script src={% static 'display_houses/bootstrap.js' %} defer></script>
+      <link rel="stylesheet" href={% static 'display_houses/style.css' %}>
   </head>
   <body>
       <script type="text/javascript">
@@ -27,12 +33,19 @@
           <form action="{% url 'index' %}" method="post" id="city-form">
             {% csrf_token %}
             <div class="form-group d-inline-block">
-              <select class="form-control" name="city-form">
-                {% for city in city_qs %}
-                <option value="{{ city.name }}">{{ city.name }}</option>
-                {% endfor %}
+              <select class="form-control" name="city-menu" id="city-menu">
+                <option value="" hidden>Choose City</option>
+                <!-- Loaded by AJAX -->
               </select>
             </div>
+
+            <div class="form-group d-inline-block">
+              <select class="form-control" name="district-menu" id="district-menu">
+                <option value="" hidden>Choose District</option>
+                <!-- Loaded by AJAX -->
+              </select>
+            </div>
+
             <input type="submit" value="Apply">
           </form>
 

@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-from django import forms
+#from django import forms
 
 class House(models.Model): 
     date_published = models.DateTimeField(auto_now_add=True)
@@ -27,14 +27,14 @@ class PropertyCountByType(models.Model):
     property_type = models.CharField(max_length=100)
     property_count = models.IntegerField(null=True, blank=True)
 
-class PriceHistory(models.Model):
-    #house_id = models.ForeignKey('House', on_delete=models.CASCADE)
-    house_id = models.CharField(max_length=100)
-    price = models.CharField(max_length=100)
-    rec_date = models.DateField()
+# class PriceHistory(models.Model):
+#     #house_id = models.ForeignKey('House', on_delete=models.CASCADE)
+#     house_id = models.CharField(max_length=100)
+#     price = models.CharField(max_length=100)
+#     rec_date = models.DateField()
 
-    def __str__(self):
-        return self.house_id
+#     def __str__(self):
+#         return self.house_id
 
 class SoldHouses(models.Model):
     date_published = models.DateTimeField(null=True, blank=True)
@@ -71,16 +71,16 @@ DISTRICT_CHOICES = [
     ('Jiaoxi Township', 'Jiaoxi Township'),
 ]
 
-class TaiwanCity(models.Model):
-    name = models.CharField(max_length=100, null=True, blank=True)
-    country = models.CharField(max_length=100, null=True, blank=True, default="Taiwan")
+# class TaiwanCity(models.Model):
+#     name = models.CharField(max_length=100, null=True, blank=True)
+#     country = models.CharField(max_length=100, null=True, blank=True, default="Taiwan")
     
-    def __str__(self):
-        return str(self.name)
+#     def __str__(self):
+#         return str(self.name)
 
-class TaiwanDistrict(models.Model):
-    name = models.CharField(max_length=100, null=True, blank=True)
-    city = models.ForeignKey(TaiwanCity, on_delete=models.CASCADE)
+# class TaiwanDistrict(models.Model):
+#     name = models.CharField(max_length=100, null=True, blank=True)
+#     city = models.ForeignKey(TaiwanCity, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return f"{self.city}-{self.name}"
+#     def __str__(self):
+#         return f"{self.city}-{self.name}"

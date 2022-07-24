@@ -1,3 +1,5 @@
 from django.contrib import admin
+from display_houses.models import TaiwanCity, TaiwanDistrict 
 
-# Register your models here.
+admin.site.register(TaiwanCity)
+admin.site.register(TaiwanDistrict)
