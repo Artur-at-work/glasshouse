@@ -1,5 +1,3 @@
-console.log("Hi from main.js")
-
 const cityForm = document.getElementById('city-form')
 const cityMenu = document.getElementById('city-menu')
 const districtMenu = document.getElementById('district-menu')
