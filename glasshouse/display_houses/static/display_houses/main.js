@@ -27,6 +27,7 @@ cityMenu.addEventListener('change', e=>{
 
     // reset to Choose District when city changed
     const default_option = document.createElement('option')
+    default_option.textContent = "Choose District"
     default_option.setAttribute('hidden', "")
     default_option.setAttribute('value', "")
     districtMenu.append(default_option)
@@ -51,3 +52,9 @@ cityMenu.addEventListener('change', e=>{
 
     })
 })
+
+// function getSelected(){
+//     const selectedCity = "Taipei City"
+//     document.write(selectedCity)
+//     console.log("from getSelected!")
+// }
