@@ -27,6 +27,84 @@ def get_page_soup(url):
     r = requests.get(url)
     return BeautifulSoup(r.content, 'html.parser')
 
+def save_to_db(soup, url_base):
+    # "try" or return
+    for result in soup.find_all('div',  {'class': 'search-result'}):
+        # zero all vars before parsing?
+        price = 1
+        bedrooms = 0
+        bathrooms = 0
+        status = "unlisted"
+
+        house_id = result.find('button', {'class': 'property-card-save-btn'}).get('data-property-id')
+        address = result.find('span', {'class': 'property-address'}).text
+
+        size_str = result.find('div', {'class': 'size'}).text # "765 sq. ft. - 71.11 m2"
+        size_m2 = float(re.search('ft. - (.*) m2', size_str).group(1)) # "71.11"
+
+        price_str = result.find('span', {'dir': 'ltr'}).text
+        price = float(price_str.replace('$','').replace(',',''))
+        price_per_m2 = round(price / size_m2, 1)
+
+        house_link = result.find('a', {'class': 'search-result-photo'}).get('href')
+        house_url = url_base + house_link
+
+        # re.search in several identical spans with different text
+        for span in result.find_all('span', {'class': 'search-result-label'}):
+            if span.find(text=re.compile("bedrooms")): # "3 bedrooms - 1 bath"
+                bedrooms = span.text[:1]
+                bathrooms = re.search('bedrooms - (.*) bath', span.text).group(1)
+            elif span.find(text=re.compile("Taiwan")): #TODO: regex if other country
+                location = span.text.strip().split(',')
+                if len(location) != 3:
+                    # missing location
+                    continue
+
+                district = location[0].strip()
+                city = location[1].strip()
+                country = location[2].strip()
+
+        if result.find('span', {'class': 'new-flag'}):
+            status = "new"
+        else:
+            status = "listed"
+
+        # If no meaningful changes, then skip without updating
+        if House.objects.filter(house_id = house_id).exists():
+            print("Exists" + house_id)
+            House.objects.filter(house_id = house_id).update(status=status) # doesn't affect modified_date
+            if House.objects.filter(
+                house_id = house_id,
+                address = address,
+                district = district,
+                city = city,
+                country = country,
+                price = price,
+                size_m2 = size_m2,
+                bedrooms = bedrooms,
+                bathrooms = bathrooms,
+                url = house_url
+                ):
+                # already in db. Skip
+                print("Skipped" + house_id)
+                continue
+
+        defaults = dict(
+            address = address,
+            district = district,
+            city = city,
+            country = country,
+            size_m2 = size_m2,
+            price = price,
+            price_per_m2 = price_per_m2,
+            url = house_url,
+            bedrooms = bedrooms,
+            bathrooms = bathrooms,
+            status = status,
+            date_modified = timezone.now()
+        )
+        House.objects.update_or_create(house_id=house_id, defaults=defaults)
+
 def scrape(request):
     url_base = "https://www.century21global.com"
     url_path = "/for-sale-residential/Taiwan/Yilan-City/Luodong-Township?pageNo=1"
@@ -124,7 +202,7 @@ def scrape(request):
 def get_file_soup(file_path):
     with open(file_path) as fp:
         return BeautifulSoup(fp, 'html.parser')
- 
+
 # DEBUG: scrape from .html file
 def scrape_file(request):
     url_base = "https://www.century21global.com"
@@ -148,82 +226,8 @@ def scrape_file(request):
             soup = get_file_soup(file_path)
 
         print("file_path:%s" %file_path)
+        save_to_db(soup, url_base)
 
-        for result in soup.find_all('div',  {'class': 'search-result'}):
-            # zero all vars before parsing?
-            price = 1
-            bedrooms = 0
-            bathrooms = 0
-            status = "unlisted"
-
-            house_id = result.find('button', {'class': 'property-card-save-btn'}).get('data-property-id')
-            address = result.find('span', {'class': 'property-address'}).text
-
-            size_str = result.find('div', {'class': 'size'}).text # "765 sq. ft. - 71.11 m2"
-            size_m2 = float(re.search('ft. - (.*) m2', size_str).group(1)) # "71.11"
-
-            price_str = result.find('span', {'dir': 'ltr'}).text
-            price = float(price_str.replace('$','').replace(',',''))
-            price_per_m2 = round(price / size_m2, 1)
-
-            house_link = result.find('a', {'class': 'search-result-photo'}).get('href')
-            house_url = url_base + house_link
-
-            # re.search in several identical spans with different text
-            for span in result.find_all('span', {'class': 'search-result-label'}):
-                if span.find(text=re.compile("bedrooms")): # "3 bedrooms - 1 bath"
-                    bedrooms = span.text[:1]
-                    bathrooms = re.search('bedrooms - (.*) bath', span.text).group(1)
-                elif span.find(text=re.compile("Taiwan")): #TODO: regex if other country
-                    location = span.text.strip().split(',')
-                    if len(location) != 3:
-                        # missing location
-                        continue
-
-                    district = location[0].strip()
-                    city = location[1].strip()
-                    country = location[2].strip()
-
-            if result.find('span', {'class': 'new-flag'}):
-                status = "new"
-            else:
-                status = "listed"
-
-            # If no meaningful changes, then skip without updating
-            if House.objects.filter(house_id = house_id).exists():
-                print("Exists" + house_id)
-                House.objects.filter(house_id = house_id).update(status=status) # doesn't affect modified_date
-                if House.objects.filter(
-                    house_id = house_id,
-                    address = address,
-                    district = district,
-                    city = city,
-                    country = country,
-                    price = price,
-                    size_m2 = size_m2,
-                    bedrooms = bedrooms,
-                    bathrooms = bathrooms,
-                    url = house_url
-                    ):
-                    # already in db. Skip
-                    print("Skipped" + house_id)
-                    continue
-            
-            defaults = dict(
-                address = address,
-                district = district,
-                city = city,
-                country = country,
-                size_m2 = size_m2,
-                price = price,
-                price_per_m2 = price_per_m2,
-                url = house_url,
-                bedrooms = bedrooms,
-                bathrooms = bathrooms,
-                status = status,
-                date_modified = timezone.now()
-            )
-            House.objects.update_or_create(house_id=house_id, defaults=defaults)
     return redirect("../")
 
 
