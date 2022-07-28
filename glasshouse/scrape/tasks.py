@@ -13,6 +13,6 @@ def archive_prices():
        print("Saving price record for %s" % house.house_id)
 
 @shared_task
-def say_hello(a):
+def say_hello():
     #rdb.set_trace()
-    return "Hello %s" %a
+    return "Hello World from Celery tasks.py"
