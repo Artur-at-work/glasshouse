@@ -1,9 +1,0 @@
-# start celery worker
-celery -A glasshouse worker --loglevel=DEBUG -EB
-
-# start celery beat. Add schedules in django/admin
-(docker-glasshouse-30mazGAN) cdu@cdu:/workspace/docker-glasshouse/glasshouse$ celery -A glasshouse beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
-
-# start flower and can see rdis broker, but not message queue status
-#celery -A glasshouse flower --address=10.2.8.107 --port=5566 
-
