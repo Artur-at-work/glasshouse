@@ -9,12 +9,15 @@ def houses_list(request):
     houses = House.objects.all() 
     if request.method == 'POST':
         print("request.method: %s" %request.method)
-        city_filter =  request.POST['city-menu']
-        district_filter = request.POST['district-menu']
-        if city_filter != "":
-            houses = houses.filter(city=city_filter)
-            if district_filter != "Choose District": # TODO: avoid grabbing default text
-                houses = houses.filter(district=district_filter)
+        selected_city =  request.POST['city-menu']
+        selected_district = request.POST['district-menu']
+        #print("sel city:%s" % selected_city )
+        #print("sel dist:%s" % selected_district )
+        if selected_city != "":
+            houses = houses.filter(city=selected_city)
+            print("houses: %s" %houses)
+            if selected_district != "": # TODO: avoid grabbing default text
+                houses = houses.filter(district=selected_district)
     else:
         print("request.method: %s" %request.method)
         houses = House.objects.all()

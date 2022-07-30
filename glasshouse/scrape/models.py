@@ -27,15 +27,6 @@ class PropertyCountByType(models.Model):
     property_type = models.CharField(max_length=100)
     property_count = models.IntegerField(null=True, blank=True)
 
-# class PriceHistory(models.Model):
-#     #house_id = models.ForeignKey('House', on_delete=models.CASCADE)
-#     house_id = models.CharField(max_length=100)
-#     price = models.CharField(max_length=100)
-#     rec_date = models.DateField()
-
-#     def __str__(self):
-#         return self.house_id
-
 class SoldHouses(models.Model):
     date_published = models.DateTimeField(null=True, blank=True)
     house_id = models.CharField(max_length=100) # TODO: non-editable after debug tests
@@ -70,17 +61,3 @@ DISTRICT_CHOICES = [
     ('Luodong Township', 'Luodong Township'),
     ('Jiaoxi Township', 'Jiaoxi Township'),
 ]
-
-# class TaiwanCity(models.Model):
-#     name = models.CharField(max_length=100, null=True, blank=True)
-#     country = models.CharField(max_length=100, null=True, blank=True, default="Taiwan")
-    
-#     def __str__(self):
-#         return str(self.name)
-
-# class TaiwanDistrict(models.Model):
-#     name = models.CharField(max_length=100, null=True, blank=True)
-#     city = models.ForeignKey(TaiwanCity, on_delete=models.CASCADE)
-    
-#     def __str__(self):
-#         return f"{self.city}-{self.name}"

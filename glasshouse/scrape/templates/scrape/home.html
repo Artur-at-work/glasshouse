@@ -17,8 +17,10 @@
 
       <div class="jumbotron">
         <center><h3>GlassHouse</h3>
-          <a href="{% url 'scrape' %}" class="btn btn-success">Scrape Now</a>
-          <a href="{% url 'clean' %}" class="btn btn-success">Clean All</a> 
+          <a href="{% url 'scrape' %}" class="btn btn-success">Scrape Houses</a>
+          <a href="{% url 'clean' %}" class="btn btn-success">Clean Houses</a> 
+          <BR><BR>
+          <a href="{% url 'generate_cities_districts' %}" class="btn btn-success">Generate Cities & Districts</a>
           <BR><BR>
           <h6>Total Listings: {{ object_list|length }}</h6>
 
