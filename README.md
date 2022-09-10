@@ -1,12 +1,13 @@
 # Glasshouse
-
-This project seeks to provide useful insights into housing market by collecting the property data from https://www.century21global.com/ and storing it for later data analytics.
+Regulary scraping the property listings from https://www.century21global.com/.
+Data then displayed in tables and allows more filters than original website.
 
 ## Description
 
 Displays the quick summary of listed houses with additional filters.
-Keeps the history of sold houses to help you see the popular sales items.
-Track history of price changes to help you negotiate the reasonable price.
+Keeps the history of sold houses to help identify the best value for money.
+Track price history of each property to assist with price negotiation.
+
 TODO: Send notification when new house with matching criterias was listed.
 TODO: Compare housing prices from other agency in the same area.
 
@@ -16,19 +17,33 @@ TODO: Compare housing prices from other agency in the same area.
 
 * Docker, Docker-compose, Python 3.8, Django 4.0.5
 
-### Installing
-In Docker containers:
+### Installation
+In Docker containers (Recommended):
 * Clone the repo
 * Run "docker-compose built -d"
+
+Note: Docker-compose mounts .glasshouse as bind mount. So any changes made to container are updated inside the source code as well
 
 In VM:
 * Clone the repo
 * Install the requirements.txt
 
+* Start celery worker
+```
+celery -A glasshouse worker --loglevel=DEBUG -EB
+```
+
+* Start celery beat. Add schedules in django/admin to Celery beat DB
+```
+ celery -A glasshouse beat -l info --scheduler
+```
+
+* TODO: add Redis manual setup steps 
+
 ### Executing program
 
-* docker ps
 * Total 4 containers should be running
+* docker ps
 * Creating celery scheduled task with Django Admin
 TODO: Step-by-step bullets with output sample
 ```
@@ -60,3 +75,4 @@ This project is licensed under the [NAME HERE] License
 TODO: add LICENCE.md 
 
 ## Acknowledgments
+To Internet
