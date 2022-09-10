@@ -14,7 +14,7 @@ def plot_price_history():
     result_table = pd.DataFrame(row) # TODO: preserve column names
     print(list(result_table.columns))
 
-    fig = px.line(result_table, x=2, y=1, color=3)
+    fig = px.line(result_table, x=3, y=2, color=1)
     fig.update_layout(title_text = 'Price History by House',
                       xaxis_title = 'Dates',
                       yaxis_title = 'Price')
