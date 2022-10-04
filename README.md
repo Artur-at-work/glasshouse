@@ -1,5 +1,6 @@
 # Glasshouse
-Regulary scraping the property listings from https://www.century21global.com/.
+
+Regulary scraping the property listings from https://www.century21global.com/ 
 Data then displayed in tables and allows more filters than original website.
 
 ## Description
@@ -13,18 +14,57 @@ TODO: Compare housing prices from other agency in the same area.
 
 ## Getting Started
 
-### Dependencies
-
-* Docker, Docker-compose, Python 3.8, Django 4.0.5
-
-### Installation
-In Docker containers (Recommended):
+### Installation in Containers (Recommended):
 * Clone the repo
-* Run "docker-compose built -d"
+```
+sudo git clone https://github.com/Artur-at-work/glasshouse.git
+```
+* Build and start the containers
+```
+sudo docker-compose build
+sudo docker-compose up
+```
+Note:
+1. celery-beat container may fail to start since the schedule is empty. We’re going to address this problem in later steps
+2. Docker-compose mounts .glasshouse as bind mount. So any changes made to container are updated inside the source code as well
 
-Note: Docker-compose mounts .glasshouse as bind mount. So any changes made to container are updated inside the source code as well
+* Create Admin user for database
+- Connect to glasshouse_web container to create Django administrative user
+```
+docker exec -it $YOUR_CONTAINER_ID bash
 
-In VM:
+root@16d5445a8026:/usr/src/app# python manage.py createsuperuser
+Username (leave blank to use 'root'): admin
+Email address: 
+Password:
+```
+- Login to http://localhost:8000/admin with newly created admin user
+
+* Create Periodic Task for Celery-beat
+
+- "PERIODIC TASKS – Periodic Tasks – Add"
+- Restart containers. This time celery-beat container must start
+```
+docker-compose down
+docker-compose up
+```
+- Verify your shcedule task is executed in logs
+```
+celery-beat_1  | [2022-09-20 18:01:00,021: INFO/MainProcess] Scheduler: Sending due task hourly scrape price test (scrape.tasks.archive_prices)
+```
+
+* Manual scraping
+During first time installation (or debugging) it’s recommended to verify scraping manually before creating the automated celery-beat task.
+
+- Go to http://localhost:8000/scrape and press "Scrape Houses"
+It must start scraping the website and may take around 15 min.
+
+- Press “Generate Cities and Districts”
+It will extract distinct City and District names from the scraped houses table and store into separate table. Those records are used to populate the drop-down menu
+
+- Go to http://localhost:8000 to see the scraped results (or refresh the page)
+## Installation In VM:
+
 * Clone the repo
 * Install the requirements.txt
 
@@ -45,7 +85,6 @@ celery -A glasshouse worker --loglevel=DEBUG -EB
 * Total 4 containers should be running
 * docker ps
 * Creating celery scheduled task with Django Admin
-TODO: Step-by-step bullets with output sample
 ```
 code blocks for commands
 ```
@@ -58,21 +97,14 @@ code blocks for commands
 
 TODO: terminal output sample
 ```
-command to run if program contains helper info
+command
 ```
-
-## Authors
-
 
 ## Version History
 
 * 0.1
     * Initial Release
 
-## License
+<!-- ## License
 
-This project is licensed under the [NAME HERE] License
-TODO: add LICENCE.md 
-
-## Acknowledgments
-To Internet
+This project is licensed under the MIT License -->
