@@ -9,18 +9,18 @@ from display_houses.models import TaiwanCity, TaiwanDistrict
 from django.utils import timezone
 
 # Returns True if property count has changed
-def has_new_property(soup):
-    property_types = PropertyCountByType.objects.all()
-    property_types.__dict__
+#def has_new_property(soup):
+#    property_types = PropertyCountByType.objects.all()
+#    property_types.__dict__
 
-    for count in soup.find_all('span',  {'class': 'count'}):
-        ptype = count.previous_sibling.strip()
-        if ptype in property_types and property_types[ptype] != count.text.strip("()"):
+#    for count in soup.find_all('span',  {'class': 'count'}):
+#        ptype = count.previous_sibling.strip()
+#        if ptype in property_types and property_types[ptype] != count.text.strip("()"):
             # new property count doesn't match old count in db
-            new_count = {ptype:new_count.text.strip("()")}
-            property_types.update(new_count)
-            return True
-    return False
+#            new_count = {ptype:new_count.text.strip("()")}
+#            property_types.update(new_count)
+#            return True
+#    return False
 
 def get_page_soup(url):
     r = requests.get(url)
