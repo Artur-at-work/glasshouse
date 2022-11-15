@@ -3,6 +3,9 @@
 Regulary scraping the property listings from https://www.century21global.com/<br>
 Data then displayed in tables and allows more filters than original website.
 
+<BR><a href="http://ec2-54-193-166-79.us-west-1.compute.amazonaws.com/"> DEMO </a>
+ <i>(note: slow response due to low resources on server)</i>
+
 ## Description
 
 Displays the quick summary of listed houses with additional filters.<br>
