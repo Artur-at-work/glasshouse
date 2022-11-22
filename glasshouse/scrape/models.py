@@ -2,10 +2,11 @@ from django.db import models
 from django.utils.timezone import now
 #from django import forms
 
+
 class House(models.Model): 
     date_published = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(default=now, blank=True)
-    house_id = models.CharField(max_length=100) # TODO: non-editable after debug tests
+    house_id = models.CharField(max_length=100)  # TODO: non-editable after debug tests
     address = models.CharField(max_length=100, null=True, blank=True)
     district = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
@@ -13,8 +14,8 @@ class House(models.Model):
     size_m2 = models.FloatField(null=True, blank=True)
     price = models.FloatField()
     price_per_m2 = models.FloatField()
-    bedrooms = models.IntegerField(null=True, blank=True, default = 0)
-    bathrooms = models.IntegerField(null=True, blank=True, default = 0)
+    bedrooms = models.IntegerField(null=True, blank=True, default=0)
+    bathrooms = models.IntegerField(null=True, blank=True, default=0)
     url = models.TextField(null=True, blank=True)
     image = models.URLField(null=True, blank=True)
     status = models.CharField(max_length=100, blank=True, default="unlisted")
@@ -23,9 +24,11 @@ class House(models.Model):
     def __str__(self):
         return self.house_id
 
+
 class PropertyCountByType(models.Model):
     property_type = models.CharField(max_length=100)
     property_count = models.IntegerField(null=True, blank=True)
+
 
 class SoldHouses(models.Model):
     date_published = models.DateTimeField(null=True, blank=True)
@@ -37,13 +40,14 @@ class SoldHouses(models.Model):
     size_m2 = models.FloatField(null=True, blank=True)
     price = models.FloatField()
     price_per_m2 = models.FloatField()
-    bedrooms = models.IntegerField(null=True, blank=True, default = 0)
-    bathrooms = models.IntegerField(null=True, blank=True, default = 0)
+    bedrooms = models.IntegerField(null=True, blank=True, default=0)
+    bathrooms = models.IntegerField(null=True, blank=True, default=0)
     url = models.TextField(null=True, blank=True)
     image = models.URLField(null=True, blank=True)
     status = models.CharField(max_length=100, null=True)
     date_sold = models.DateTimeField(default=now, editable=False, null=True, blank=True) # same approach in House?
     # TODO: add year built from house page
+
 
 CITY_CHOICES = [
     ('*','---City---'),
@@ -55,6 +59,7 @@ CITY_CHOICES = [
     ('Tainan City', 'Tainan City'),
     ('Taitung City', 'Taitung City'),
     ]
+
 
 DISTRICT_CHOICES = [
     ('*', '---District---'),

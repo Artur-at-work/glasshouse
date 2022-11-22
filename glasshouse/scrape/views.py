@@ -27,6 +27,7 @@ def get_page_soup(url):
     dp("r_status_code", r.status_code)
     return BeautifulSoup(r.content, 'html.parser')
 
+
 def save_to_db(soup, url_base):
     # TODO: "try" or return
     for result in soup.find_all('div',  {'class': 'search-result'}):
@@ -114,6 +115,7 @@ def save_to_db(soup, url_base):
         House.objects.update_or_create(house_id=house_id, defaults=defaults)
         dp("update_or_create house_id", house_id)
 
+
 def scrape(request):
     url_base = "https://www.century21global.com"
     #url_path = "/for-sale-residential/Taiwan/Keelung-City/Keelung-Township?pageNo=1"
@@ -135,6 +137,7 @@ def scrape(request):
         save_to_db(soup, url_base)
     return redirect("../")
 
+
 def houses_list(request):
     city_qs = TaiwanCity.objects.all()
     if request.method == 'POST':
@@ -150,10 +153,12 @@ def houses_list(request):
     }
     return render(request, "scrape/home.html", context)
 
+
 def clean(request):
     houses = House.objects.all()
     houses.delete()
     return redirect("../")
+
 
 def move_sold_houses():
     for h in House.objects.filter(status="sold"):
@@ -174,6 +179,7 @@ def move_sold_houses():
             status = h.status
         )
     House.objects.filter(status="sold").delete()
+
 
 def generate_cities_districts(request):
     cities = House.objects.order_by().values('city').distinct()
