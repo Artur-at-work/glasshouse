@@ -23,4 +23,5 @@ urlpatterns = [
     path('dashboard/', include("dashboard.urls")),
     path('house_api/',include("house_api.urls")),
     path('api-auth/', include("rest_framework.urls")),
+    path('', include('django_prometheus.urls')),
 ]
