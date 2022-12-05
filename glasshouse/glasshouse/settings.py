@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'scrape.apps.ScrapeConfig',
     'display_houses.apps.DisplayHousesConfig',
     'dashboard.apps.DashboardConfig',
-    'django_celery_beat'
+    'django_celery_beat',
+    'rest_framework',
+    'house_api'
 ]
 
 MIDDLEWARE = [
