@@ -38,3 +38,21 @@ services:
     env_file: .env
     depends_on:
       - redis
+
+  prometheus:
+    image: prom/prometheus
+    #    restart: 'no'
+    volumes:
+      - ./prometheus_data:/etc/prometheus
+    ports:
+      - 9090:9090
+    network_mode: host
+
+  grafana:
+    image: grafana/grafana
+    restart: 'no'
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    network_mode: host
