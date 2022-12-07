@@ -17,6 +17,10 @@ TODO: Compare housing prices from other agency in the same area.
 
 ## Getting Started
 
+### Overview
+
+![image](https://user-images.githubusercontent.com/40683252/206153176-58a73388-f91f-4cac-9aa1-ce09e4fe6f57.png)
+
 ### Installation in Containers (Recommended):
 * Clone the repo
 ```
