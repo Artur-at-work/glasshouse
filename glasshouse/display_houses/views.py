@@ -25,12 +25,11 @@ def houses_list(request):
 
 
 def sold_houses_list(request):
-    houses = SoldHouses.objects.all()[::-1]
+    houses = SoldHouses.objects.order_by('-date_sold')  # Retrieve in descending order
     context = {
         'object_list': houses,
     }
     return render(request, "display_houses/sold_houses.html", context)
-
 
 def get_json_city_data(request):
     city_val = list(TaiwanCity.objects.values())

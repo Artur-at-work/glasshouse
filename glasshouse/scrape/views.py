@@ -141,17 +141,18 @@ def scrape(request):
 def houses_list(request):
     city_qs = TaiwanCity.objects.all()
     if request.method == 'POST':
-        dp("request.method", request.method)
-        city_filter =  request.POST.get('city-form')
-        houses = House.objects.all().filter(city=city_filter)
+        city_filter = request.POST.get('city-form')
+        houses = House.objects.filter(city=city_filter)
     else:
-        dp("request.method", request.method)
         houses = House.objects.all()
+
+    paginator = PageNumberPagination()
+    paginated_houses = paginator.paginate_queryset(houses, request)
     context = {
-        'object_list': houses,
-        'city_qs' : city_qs,
+        'object_list': paginated_houses,
+        'city_qs': city_qs,
     }
-    return render(request, "scrape/home.html", context)
+    return paginator.get_paginated_response(context)
 
 
 def clean(request):

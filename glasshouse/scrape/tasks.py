@@ -6,13 +6,16 @@ from django.utils import timezone
 
 
 @shared_task
+@shared_task
 def archive_prices():
+    price_history_records = []
     for house in House.objects.all():
-        p = PriceHistory(house_id=house.house_id,
-                         price=house.price,
-                         rec_date=timezone.now())
-        p.save()
-        print("Saving price record for %s" % house.house_id)
+        price_history_records.append(PriceHistory(
+            house_id=house.house_id,
+            price=house.price,
+            rec_date=timezone.now()
+        ))
+    PriceHistory.objects.bulk_create(price_history_records)  # Bulk create
 
 
 @shared_task

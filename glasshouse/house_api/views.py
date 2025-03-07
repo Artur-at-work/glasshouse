@@ -10,11 +10,19 @@ from rest_framework import permissions
 class HouseApiView(APIView):
     #permission_classes = [permissions.IsAuthenticated]
 
+    from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+
+class HouseApiView(APIView):
+    class CustomPagination(PageNumberPagination):
+        page_size = 10  # Adjust the page size as needed
+
     def get(self, request, *args, **kwargs):
         houses = House.objects.all()
-        serializer = HouseSerializer(houses, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
+        paginator = self.CustomPagination()
+        paginated_houses = paginator.paginate_queryset(houses, request)
+        serializer = HouseSerializer(paginated_houses, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
 
      
